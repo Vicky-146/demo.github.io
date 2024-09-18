@@ -1,0 +1,808 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+}
+/* 以下是head的css */
+.headcontainer{
+  /* background-color: antiquewhite; */
+  max-width: 1900px;
+  height:54px;
+  /* background-color: blanchedalmond; */
+  margin:0 auto;
+  font-size:  13px !important;
+}
+.subhcont{
+  max-width: 1250px;
+  height:100%;
+  background-color: white;
+  margin: 0 auto;
+  display:flex ;
+  justify-content: space-between;
+  align-items:center ;
+  /* padding: 0 5%; */
+}
+.bi-list{
+  font-size: 20px;
+  display: none;
+  flex:0;
+  margin-left:10px;
+}
+.bi-x-lg{
+  font-size: 20px;
+  display: none;
+  margin-left:12px;
+}
+#search-right{
+  display: none;
+}
+.navcon2{
+  margin-left: 50px;
+  margin-right: 150px;
+  flex:2;
+}
+#more{
+  display: none;
+}
+.bi-chevron-down{
+  display: none;
+}
+#donwn{
+  display: inline;
+  position: relative;
+  top:3px;
+  font-size: 10px;
+
+}
+.navcon3{
+  flex:1;
+}
+.ulcontainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  /* margin-left: -50px; */
+}
+.img{
+  width:108px;
+  height:23px;
+}
+ul{
+  list-style: none;
+  margin-bottom: 0;
+}
+a {
+  text-decoration: none; /* 移除默认的下划线 */
+  color: inherit; /* 使用继承的颜色 */
+}
+.headcontainer li:hover{
+  text-decoration: none; /* 移除默认的下划线 */
+  /* 创建一个透明的下划线 */
+  /* border-bottom: 1px solid transparent;  */
+  /* 添加过渡效果 */
+  /* transition: border-bottom 0s ease;  */
+  border-bottom: 2px solid black;
+  margin-bottom: -2px;
+  /* 鼠标变小手 */
+  cursor: pointer;
+}
+/*sign in icon*/
+#circle{
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  /* 为什么只设置长宽不起作用？ */
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left:0px;
+  top:0px;  
+  margin-left:8px;
+  margin-right: 20px;
+}
+
+#plus{
+  position:absolute;
+  left:13px;
+  top:5px; 
+  font-size:8px;
+}
+#michidden:hover, #searchcart:hover{
+  /* 悬浮下划线 */
+  text-decoration-line: underline;
+   /* 悬浮下划线 加粗*/
+  text-decoration-thickness: 1.5px;
+   /* 悬浮下划线 与上文本隔开间距 */
+  text-underline-offset: 3px;
+}
+#signdis{
+  display: flex;
+  justify-content: space-between;
+}
+/* 默认情况下所有 li 元素的边框样式 */
+.subli{
+  background-color: #e6e6e6;
+  padding:14px 15px 15px;
+  font-size: 15px;
+  border-bottom: 0.1px solid #cccccc !important; /* 使用灰色的边框，#808080是灰色的十六进制表示 */
+  border: 1px dashed transparent;
+  /* border-bottom:1px solid #e6e6e6 !important */
+}
+/* 第一个 li 元素默认显示边框 */
+.subli:first-child{
+  outline: 1px dashed grey; /* 设置聚焦时的细虚线白色边框样式 */
+}
+/* 获得焦点时的样式 */
+.subli:focus {
+  outline: 1px dashed grey; /* 设置聚焦时的细虚线白色边框样式 */
+}
+
+#menu{
+  position:absolute;
+  top:49px;
+  width:100vw; 
+  display:none;
+  z-index: 1;
+}
+#target{
+  display:none;
+}
+#target_mic{
+  display: none;
+}
+#michidden{
+  position: relative;
+}
+#mic-menu{
+  background:#f2f2f2;
+  /* display:flex !important; */
+  flex-flow:row wrap;
+  width:1025px;
+  min-width: 64px;
+  height:451px;
+  white-space:nowrap;
+  position: absolute;
+  display: none;
+  overflow-x: visible;
+  margin-left:-800px;
+  top:50px;
+  z-index: 1;
+}
+
+#target_mic:checked ~ #mic-menu{
+  display:flex;
+}
+/* ⬇⬇⬇-----main层-----------⬇⬇⬇ */
+.maincontainer{
+  /* background-color:chartreuse; */
+  max-width: 1900px;
+  /* background-color: blanchedalmond; */
+  margin:0 auto;
+  font-size:  13px !important;
+}
+.maincontainer ul{
+  /* background-color: aqua; */
+  margin:0 auto;
+  max-width: 1250px;
+  display: flex;
+  justify-content: center!important;
+  flex-wrap:wrap!important
+}
+.maincontainer ul li{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  margin:16px 24px;
+  flex-wrap: wrap !important;
+}
+.maincontainer ul li a{
+  color:blue;
+  font-weight: 600!important;
+  cursor:pointer;
+  text-decoration: underline;
+}
+#mainimg{
+  width:40px;
+  height:40px;
+  flex-shrink:0!important;
+  /* margin-bottom:.5rem!important; */
+}
+#maina:hover{
+  border-bottom: 0;
+}
+.carousel{
+  padding: 0px 5px;
+}
+.carousel-card {
+  width: 38%;
+  min-width: 1px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  background-clip: border-box;
+  padding: 48px; 
+  position: absolute; 
+  top:100px;
+  left:100px;
+}
+.inner-style{
+  max-height:600px;
+  width:auto;
+}
+.badge {
+  display: inline-block;
+  padding: .375em .75em;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: top;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  border-radius: 0; 
+}
+.material-surface {
+  background-color: #f2f2f2;
+  color: #000;
+}
+.mb-2, .my-2 {
+  margin-bottom: .5rem!important;
+}
+.bargin{
+  font-size: 2.3125rem;
+  margin-bottom: 1.25rem;
+}
+.mb-4, .my-4 {
+  margin-bottom: 1.5rem!important;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.btn{
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  background-color: #0067b8;
+  color: #fff!important;
+}
+.control{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 70px;
+}
+.bi-pause-circle, .bi-chevron-left, .bi-chevron-right {
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: 0 16px;
+}
+.bi-circle {
+  font-weight: 400;
+  font-size: .625rem;
+  padding: 6.5px 16px;
+}
+.subsction{
+  max-width: 1900px;
+  height:515px;
+  padding: 0 93px;
+  margin:0 38px;
+}
+.picture-container{
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 89%;
+  /* max-height: 600px;; */
+  box-sizing: content-box;
+}
+.maincontainer .row{
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 90%;
+  /* max-height: 600px;; */
+  box-sizing: content-box;
+  /* border: 1px solid red; */
+  justify-content: space-around;
+}
+.row{
+  margin-top:60px;
+  margin-bottom: 100px;;
+}
+.picture-card {
+  width: 38%;
+  min-width: 1px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  background-clip: border-box;
+  padding: 48px; 
+  position: relative;
+  top:-380px;
+  left:30px;
+}
+.card{
+  height: 100%;
+  border-radius: 0;/*直角边框*/
+}
+.card-body{
+  display: flex;
+  flex-direction:column;
+  flex:1 1 auto;
+  justify-content:space-between;
+}
+.btn-primary{
+  width: 250px;
+}
+.card-body > p,a{
+  font-size: 1rem;
+}
+.card-link{
+  color: #0067b8;
+}
+.bi-right{
+  padding: 0px; 
+  font-size: 15px;
+  padding-top: 2.5px;
+}
+.h3{
+  font-size: 1.8125rem;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+}
+#row-section{
+  margin-top: -200px;
+}
+
+.row-card{
+  /* margin-bottom: 30px; */
+}
+.row > div{
+  /* height:100px;
+  width: 400px; */
+  /* border:1px solid black; */
+}
+.ma-img{
+ margin-left: 13px;
+  width:40px;
+  height:40px;
+}
+.section-m{
+  /* margin-right: 0.1px; */
+
+}
+
+.btn-back-style{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 60px;
+  margin-right: 10px;
+  position: fixed;
+    /* left: 0; */
+    right: 0;
+    /* width: 100%; */
+    /* 控制定位元素在堆叠顺序中的位置。具有较高 z-index 值的元素会覆盖具有较低值的元素。 */
+    z-index: 1020;
+    transition: position .3s ease-in-out;
+
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4375em;
+  font-weight: 600;
+  border: .125rem solid transparent;
+  position: relative;
+  border-radius: .125rem;
+  background-color: inherit;
+  color: inherit;
+  text-decoration: none;
+  padding: .625rem .75rem;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  background-color:#D9D9D9 !important;
+}
+/* ⬆⬆⬆-----main层-----------⬆⬆⬆ */
+/*---⬇⬇⬇footer层⬇⬇⬇-----*/
+.exfootcontainer{
+  background-color:#f2f2f2;
+}
+.footcontainer{
+  box-sizing: content-box;
+  background-color:#f2f2f2;
+  max-width: 1900px;
+  margin: 0 auto;
+ 
+ }
+ .sub-foot{
+  /* padding-right: 5%;
+  padding-left: 5%; */
+  max-width:90% ;
+  margin: 0 auto;
+ }
+.c-uhff-nav-group {
+  min-height: 1px;
+  vertical-align: text-top;
+  padding: 0 12px;
+}
+.c-heading-4 {
+  color: #616161;
+  word-break: break-word;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 36px 0 4px;
+  font-weight: 600;
+  line-height: 28px;
+}
+.c-list {
+  font-size: 11px;
+  line-height: 16px;
+  margin-top: 0;
+  /* font-size: 15px; */
+  line-height: 20px;
+  /* padding-left: 19px; */
+  padding-right: 0;
+  /* margin: 8px 0; */
+  list-style-position: outside;
+}
+.context-uhf li {
+  word-break: break-word;
+}
+.c-list li {
+  padding: 8px 0;
+}
+.c-list.f-bare {
+  padding-left: 0;
+  list-style-type: none;
+}
+.c-uhff-link {
+  color: #616161;
+  word-break: break-word;
+}
+.a-link{
+  color: #616161;
+  /* word-break: keep-all; */
+  white-space: nowrap;
+  padding-left: 5px;
+}
+.row-0{
+  display: flex; 
+  justify-content: space-around; 
+  padding:0; 
+  max-width:100%;
+  /* border: 1px solid red; */
+  margin-top:0px;
+  margin-bottom:60px;
+}
+.row-1{
+  /* border: 1px solid red; */
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;/*交叉轴对齐*/
+  justify-content: flex-start;
+  max-width: 50%;
+  margin-top:0px;
+  margin-bottom: 0px;
+}
+#c-uhff-footer_contactus{
+  padding: 0 10px 4px 0;
+}
+.c-uhff-link:hover{
+  text-decoration: underline;
+   /* 悬浮下划线 加粗*/
+   text-decoration-thickness: 1px;
+}
+.row-nav{
+  display: flex;
+  justify-content: flex-end;
+  /* width: 100%; */
+  align-items: center;
+  /* padding-left: 50px; */
+}
+.col-pad-left{
+  padding-left: 10px;;
+  padding-right: 0px;
+}
+.col-pad-right{
+ padding-right: 5px;;
+ padding-left:0px;
+}
+/* ---⬆⬆⬆footer层⬆⬆⬆ ---*/
+
+
+/* media query */
+/* 当屏幕宽度小于等于 1399px 时隐藏导航栏 */
+
+@media screen and (max-width: 1419px){
+  .ft-index{
+    flex-wrap: wrap;
+  }
+  .row-nav{
+    width: 100%
+  }
+}
+@media screen and (max-width: 1399px) {
+  /* 隐藏导航栏 */
+  #signin{
+    display: none;
+  }
+}
+@media screen and (max-width: 1398px) {
+  /* 隐藏导航栏 */
+  #signin{
+    display: none;
+  }
+  #searchcart{
+    display: none;
+  }
+  #search,#cart3, #signdis{
+    /* margin:0px -10px; */
+  }
+  /* #mic-menu{
+    position: absolute;
+    left:-650px;
+    top:30px;
+  } */
+}
+@media screen and (max-width:1243px) {
+  .subhcont{
+    padding: 0 25px;
+  }
+}
+@media screen and (max-width: 1200px){
+  #more{
+    display: inline;
+  }
+  .bi-chevron-down{
+    display: inline;
+    font-size: 10px;
+    position: relative;
+    top: 2px;
+  }
+  #navhidden{
+    display: none;
+  }
+  .carousel-card{
+    width: 98% !important; 
+    position: relative;
+    top:-50px;
+    left:9px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 .1875rem .4375rem 0 rgba(0,0,0,.13),0 .0625rem .125rem 0 rgba(0,0,0,.11);
+  }
+  .carousel-item{
+    max-height:850px;
+  }
+  /* #main-ul{
+    position: relative;
+    top:-50px;
+  } */
+  #mic-menu{
+    display: none !important;/*当一个选择器里的属性同时有两个值时，用！import 选择优先性*/
+  }
+  .picture-container {
+    width: 98%;
+    padding-right: 1%;
+    padding-left: 1%;
+    /* border: 1px solid red; */
+  }
+  .picture-card{
+    width: 98% !important; 
+    position: relative;
+    top:-50px;
+    left:9px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 .1875rem .4375rem 0 rgba(0,0,0,.13),0 .0625rem .125rem 0 rgba(0,0,0,.11);
+  }
+  #row-section{
+    margin-top: 0px;
+  }
+  .a-link-3{
+    padding-left:21px;
+  }
+  .c-list{
+    padding-left:0px;
+  }
+  .section-m{
+    margin-bottom: 9%;
+  }
+  .maincontainer .row {
+    padding-left: 1%;
+    padding-right: 0px;
+    width: 99%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.sub-main{
+  margin:4%;
+}
+.col-left{
+  padding-left: 6px;
+}
+.col-left1{
+  padding-left: 12px;
+}
+}
+
+@media screen and (max-width: 1110px){
+  #more{
+    display: inline;
+  }
+  .bi-chevron-down{
+    display: inline;
+  }
+  #navhidden{
+    display: none;
+  }
+  #blackhidden{
+    display: none;
+  }
+  /* .row-1,.row-nav{
+    width:100%
+  } */
+}
+
+.ft-index{
+  margin-left: 12px;
+}
+
+
+@media screen and (max-width:1199px){
+  .ft-index{
+    margin-left: 12px;
+  }
+  
+}
+@media screen and (max-width: 920px){
+  #more{
+    display: inline;
+  }
+  .bi-chevron-down{
+    display: inline;
+  }
+  #navhidden{
+    display: none;
+  }
+  #blackhidden{
+    display: none;
+  }
+  #xbhidden{
+    display: none;
+  }
+}
+
+@media screen and (max-width:889px){
+  #more{
+    display: inline;
+  }
+  .bi-chevron-down{
+    display: inline;
+  }
+  #navhidden{
+    display: none;
+  }
+  #blackhidden{
+    display: none;
+  }
+  #xbhidden{
+    display: none;
+  }
+  #surfhidden{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 858px){
+  #allhidden{
+    display: none;
+  }
+  #more{
+    display: none;
+  }
+  .bi-chevron-down{
+    display: inline;
+  }
+  #navhidden{
+    display: none;
+  }
+  #blackhidden{
+    display: none;
+  }
+  #xbhidden{
+    display: none;
+  }
+  #surfhidden{
+    display: none;
+  }
+  .subhcont{
+    display: flex;
+    justify-content: center;
+  }
+  #michidden,.bi-chevron-down,.navcon2{
+    display: none;
+  }
+  .navcon1{
+    display: flex;
+    flex:4;
+    justify-content: center;
+  }
+  .bi-list,#search-right{
+    display:inline;
+  }
+  .subhcont{
+    padding:0;
+  }
+  #search-right{
+    margin:20px;
+  }
+  /* :target和menu 必须是同级关系，此check伪类才生效 */
+  /* p ~ ul:通用兄弟选择器匹配属于指定元素的同级元素的所有元素。 */
+  /* 选择前面有 <p> 元素的每个 <ul> 元素。 */
+  #target:checked ~ #menu{
+    display: block;
+  }
+  #target:checked ~ #biicon #bix{
+    display: block;
+    position: relative;
+  }
+  #target:checked ~ #biicon #bilist{
+    display:none;
+  }
+  .bi-search{
+    display: none;
+  }
+  #donwn{
+    display: none;
+  }
+  #right-container{
+    display:flex;
+    flex:1;
+    align-items:center;
+    /* justify-content: space-between; */
+  }
+  .carousel-card,.picture-card{
+    width: 100% !important; 
+    position: relative;
+    top:-50px;
+    left:0px;
+  }
+
+}
+@media screen and (max-width: 575px){
+  .section-sm, .section-m{
+    margin-bottom: 15%;
+
+  }
+  .picture-container {
+    width: 100%;
+    padding-right: 4%;
+    padding-left: 3%;
+}
+.section-x{
+  /* padding-left: 0px; */
+  padding-right: 0px  ;
+}
+  
+
+}
